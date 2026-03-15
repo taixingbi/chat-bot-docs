@@ -1,25 +1,37 @@
 # chat-bot-docs
 
+## High-Level Architecture
 
-### high level architecture diagram
+```mermaid
+flowchart TD
 
-User[Client / UI]
+subgraph Client
+    Client[Client / UI]
+end
 
-User --> Gateway[API Gateway]
+subgraph API
+    Gateway[API Gateway]
+end
 
-Gateway --> Orchestrator[Orchestrator / MCP Layer]
+subgraph Core
+    Orchestrator[Orchestrator / MCP Layer]
+end
 
-Orchestrator --> Retrieval[RAG Retrieval Tool]
+subgraph Tools
+    Retrieval[RAG Retrieval Tool]
+    Tools[MCP Tool Suite]
+end
 
-Retrieval --> Hybrid[Hybrid Search<br/>Dense + BM25]
-Hybrid --> Rerank[Reranker]
+subgraph Response
+    Answer[Answer Generation]
+end
 
-Rerank --> VectorDB[Vector DB<br/>Embeddings]
-Hybrid --> KeywordDB[Keyword / BM25 Index]
+Client --> Gateway
+Gateway --> Orchestrator
 
-Orchestrator --> Tools[MCP Tool Suite]
+Orchestrator --> Retrieval
+Orchestrator --> Tools
 
-Tools --> Models[Model Services<br/>LLM / Embedding]
-
-VectorDB --> Answer[Answer Generation]
-Models --> Answer
+Retrieval --> Answer
+Tools --> Answer
+```
