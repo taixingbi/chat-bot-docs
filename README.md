@@ -1,6 +1,6 @@
 # chat-bot-docs
 
-### High-Level diagram
+### High-Level Diagram
 
 ```mermaid
 flowchart TD
@@ -20,4 +20,4 @@ E --> F
 ```
 
 
-### Test/Eval diagram
+### Test/Eval Diagram
