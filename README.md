@@ -1,6 +1,6 @@
 # chat-bot-docs
 
-## High-Level Architecture
+### High-Level Architecture
 
 ```mermaid
 flowchart TD
