@@ -5,33 +5,16 @@
 ```mermaid
 flowchart TD
 
-subgraph Client
-    Client[Client / UI]
-end
+A[Client / UI]
 
-subgraph API
-    Gateway[API Gateway]
-end
+A --> B[API Gateway]
 
-subgraph Core
-    Orchestrator[Orchestrator / MCP Layer]
-end
+B --> C[Orchestrator / MCP Layer]
 
-subgraph Tools
-    Retrieval[RAG Retrieval Tool]
-    Tools[MCP Tool Suite]
-end
+C --> D[RAG Retrieval Tool]
+C --> E[MCP Tool Suite]
 
-subgraph Response
-    Answer[Answer Generation]
-end
+D --> F[Answer Generation]
+E --> F
 
-Client --> Gateway
-Gateway --> Orchestrator
-
-Orchestrator --> Retrieval
-Orchestrator --> Tools
-
-Retrieval --> Answer
-Tools --> Answer
 ```
