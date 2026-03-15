@@ -26,21 +26,11 @@ E --> F
 ```mermaid
 flowchart TD
 
-A[Test Dataset]
+Answer[Answer Generation]
 
-A --> B[Eval Runner]
+Answer --> Online[Online Evaluation]
+Answer --> Offline[Offline Evaluation]
 
-B --> C[API Gateway]
-
-C --> D[Orchestrator / MCP Layer]
-
-D --> E[RAG Retrieval Tool]
-D --> F[MCP Tool Suite]
-
-E --> G[Answer Generation]
-F --> G
-
-G --> H[Expected Answer]
-
-H --> I[Evaluation Metrics]
+Offline --> Dataset[Test Dataset]
+Offline --> Judge[LLM Judge]
 ```
