@@ -81,7 +81,7 @@ E --> I[Alerting]
 
 F --> J[Grafana Loki]
 G --> K[Prometheus]
-H --> L[Jaeger / Tempo]
+H --> L[Langsmith]
 I --> M[PagerDuty / Alerts]
 ```
 
