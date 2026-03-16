@@ -24,21 +24,15 @@ E --> F
 ## Test / Evaluation Flow
 
 ```mermaid
-flowchart TD
+flowchart LR
 
-B[Online Evaluation]
-C[Offline Evaluation]
+subgraph Online Evaluation
+direction LR
+B1[Latency] --> B2[Token Usage] --> B3[User Feedback] --> B4[Thumbs Up / Down] --> B5[Hallucination Detection]
+end
 
-B --> B1[Latency]
-B --> B2[Token Usage]
-B --> B3[User Feedback]
-B --> B4[Thumbs Up / Down]
-B --> B5[Hallucination Detection]
-
-C --> C1[Benchmark Datasets]
-C --> C2[Golden Answers]
-C --> C3[Retrieval Recall@K]
-C --> C4[LLM Judge Scoring]
-C --> C5[Regression Tests]
-
+subgraph Offline Evaluation
+direction LR
+C1[Benchmark Datasets] --> C2[Golden Answers] --> C3[Retrieval Recall@K] --> C4[LLM Judge Scoring] --> C5[Regression Tests]
+end
 ```
