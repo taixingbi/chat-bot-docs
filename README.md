@@ -29,14 +29,14 @@ flowchart TD
 B[Online Evaluation]
 C[Offline Evaluation]
 
-B --> C
-
+%% Online metrics
 B --> B1[Latency]
 B --> B2[Token Usage]
 B --> B3[User Feedback]
 B --> B4[Thumbs Up / Down]
 B --> B5[Hallucination Detection]
 
+%% Offline metrics
 C --> C1[Benchmark Datasets]
 C --> C2[Golden Answers]
 C --> C3[Retrieval Recall@K]
