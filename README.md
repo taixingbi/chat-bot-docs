@@ -47,3 +47,28 @@ A --> B3[Retrieval Recall@K]
 A --> B4[LLM Judge Scoring]
 A --> B5[Regression Tests]
 ```
+
+### SRE
+
+flowchart LR
+
+A[Telemetry Collection]
+
+A --> B[Logs]
+B --> B1[request_id]
+B --> B2[prompt]
+B --> B3[model]
+B --> B4[response]
+
+A --> C[Metrics]
+C --> C1[latency_ms]
+C --> C2[token_input]
+C --> C3[token_output]
+C --> C4[cost]
+
+A --> D[Traces]
+D --> D1[gateway → retriever → LLM]
+
+A --> E[Errors]
+E --> E1[timeout]
+E --> E2[tool failure]
