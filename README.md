@@ -120,4 +120,4 @@ A --> C
 #### 3-tier routing policy for model
 * GPU1 local vLLM first 
 * GPU2 local vLLM second (very large queue, e.g over 32, since it is gpu batch)
-* Cloud agent / OpenAI last for timeout, overload, or hard failure
+* Cloud agent / OpenAI last for timeout, overload(over 64), or hard failure
