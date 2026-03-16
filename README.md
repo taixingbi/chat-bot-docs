@@ -55,20 +55,21 @@ flowchart LR
 A[Telemetry Collection]
 
 A --> B[Logs]
+A --> C[Metrics]
+A --> D[Traces]
+A --> E[Errors]
+
 B --> B1[request_id]
 B --> B2[prompt]
 B --> B3[model]
 B --> B4[response]
 
-A --> C[Metrics]
 C --> C1[latency_ms]
 C --> C2[token_input]
 C --> C3[token_output]
 C --> C4[cost]
 
-A --> D[Traces]
 D --> D1[gateway → retriever → LLM]
 
-A --> E[Errors]
 E --> E1[timeout]
 E --> E2[tool failure]
