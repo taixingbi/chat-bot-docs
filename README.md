@@ -84,3 +84,33 @@ G --> K[Prometheus]
 H --> L[Jaeger / Tempo]
 I --> M[PagerDuty / Alerts]
 ```
+
+### GPU management
+
+```mermaid
+flowchart LR
+
+subgraph A[Mac mini - Control Plane]
+A1[Ingress]
+A2[Grafana]
+A3[Prometheus]
+A4[ArgoCD]
+A5[API Gateway]
+end
+
+subgraph B[GPU Node 1]
+B1[vLLM primary]
+B2[Embedding service]
+B3[GPU batch jobs]
+end
+
+subgraph C[GPU Node 2]
+C1[vLLM secondary]
+C2[RAG ingestion workers]
+C3[Overflow / experiments]
+end
+
+A --> B
+A --> C
+
+```
