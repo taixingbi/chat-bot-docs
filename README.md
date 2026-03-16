@@ -26,18 +26,23 @@ E --> F
 ```mermaid
 flowchart TD
 
-B[Online Evaluation]
-C[Offline Evaluation]
+subgraph Offline Evaluation
+C1[Benchmark Datasets]
+C2[Golden Answers]
+C3[Retrieval Recall@K]
+C4[LLM Judge Scoring]
+C5[Regression Tests]
 
-B --> B1[Latency]
-B --> B2[Token Usage]
-B --> B3[User Feedback]
-B --> B4[Thumbs Up / Down]
-B --> B5[Hallucination Detection]
+C1 --> C2 --> C3 --> C4 --> C5
+end
 
-C --> C1[Benchmark Datasets]
-C --> C2[Golden Answers]
-C --> C3[Retrieval Recall@K]
-C --> C4[LLM Judge Scoring]
-C --> C5[Regression Tests]
+subgraph Online Evaluation
+B1[Latency]
+B2[Token Usage]
+B3[User Feedback]
+B4[Thumbs Up / Down]
+B5[Hallucination Detection]
+
+B1 --> B2 --> B3 --> B4 --> B5
+end
 ```
