@@ -24,13 +24,21 @@ E --> F
 ## Test / Evaluation Flow
 
 ```mermaid
-flowchart TD
-
-Answer[Answer Generation]
-
-Answer --> Online[Online Evaluation]
-Answer --> Offline[Offline Evaluation]
-
-Offline --> Dataset[Test Dataset]
-Offline --> Judge[LLM Judge]
+Answer Generation
+        │
+   ┌────┴─────┐
+   │          │
+Online Eval   Offline Eval
+   │              │
+   │              ├─ Benchmark datasets
+   │              ├─ Golden answers
+   │              ├─ Retrieval recall@k
+   │              ├─ LLM judge scoring
+   │              └─ Regression tests
+   │
+   ├─ Latency
+   ├─ Token usage
+   ├─ User feedback
+   ├─ Thumbs up/down
+   └─ Hallucination detection
 ```
