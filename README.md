@@ -129,3 +129,9 @@ authentication (access control)
 rate limit (5 requests / second / user, 60 requests / minute / user, Tokens per minute (TPM) 90 000)
 
 request validation
+
+### LLM workloads
+vLLM continuous batching
+ * higher GPU utilization
+ * reduced latency
+ * parallel requests
