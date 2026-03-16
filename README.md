@@ -132,6 +132,6 @@ request validation
 
 ### LLM workloads
 vLLM continuous batching
- * higher GPU utilization
+ * higher GPU utilization (make close to 1, lile 0.9)
  * reduced latency
  * parallel requests
