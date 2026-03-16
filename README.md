@@ -85,7 +85,7 @@ H --> L[Jaeger / Tempo]
 I --> M[PagerDuty / Alerts]
 ```
 
-### GPU management
+### k3s
 
 ```mermaid
 flowchart LR
