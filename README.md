@@ -131,7 +131,8 @@ rate limit (5 requests / second / user, 60 requests / minute / user, Tokens per 
 request validation
 
 ### LLM workloads
-vLLM continuous batching
+1. vLLM continuous batching
  * higher GPU utilization (make close to 1, lile 0.9)
  * reduced latency
  * parallel requests
+2. Horizontal scaling
