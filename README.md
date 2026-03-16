@@ -136,3 +136,20 @@ request validation
  * reduced latency
  * parallel requests
 2. Horizontal scaling
+
+###  AI safely in production
+#### security
+1. API authentication
+2. prompt filtering
+3. PII detection
+
+#### Cost control
+cost_per_request
+tokens_per_user
+model_usage
+Guardrails
+
+Example:
+prompt length limit
+rate limiting
+timeout protection
