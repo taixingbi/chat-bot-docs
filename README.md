@@ -73,4 +73,14 @@ D --> D1[gateway → retriever → LLM]
 
 E --> E1[timeout]
 E --> E2[tool failure]
+
+B --> F[Log Storage]
+C --> G[Metrics System]
+D --> H[Tracing System]
+E --> I[Alerting]
+
+F --> J[Grafana Loki]
+G --> K[Prometheus]
+H --> L[Jaeger / Tempo]
+I --> M[PagerDuty / Alerts]
 ```
