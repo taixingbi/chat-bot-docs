@@ -26,20 +26,24 @@ E --> F
 ```mermaid
 flowchart TD
 
-B[Online Evaluation]
-C[Offline Evaluation]
+A[Online Evaluation]
 
-%% Online metrics
-B --> B1[Latency]
-B --> B2[Token Usage]
-B --> B3[User Feedback]
-B --> B4[Thumbs Up / Down]
-B --> B5[Hallucination Detection]
+A --> B1[Latency Metrics]
+A --> B2[Token Usage]
+A --> B3[User Feedback]
+A --> B4[Thumbs Up / Down]
+A --> B5[Hallucination Detection]
+```
 
-%% Offline metrics
-C --> C1[Benchmark Datasets]
-C --> C2[Golden Answers]
-C --> C3[Retrieval Recall@K]
-C --> C4[LLM Judge Scoring]
-C --> C5[Regression Tests]
+
+```mermaid
+flowchart TD
+
+A[Offline Evaluation]
+
+A --> B1[Benchmark Datasets]
+A --> B2[Golden Answers]
+A --> B3[Retrieval Recall@K]
+A --> B4[LLM Judge Scoring]
+A --> B5[Regression Tests]
 ```
