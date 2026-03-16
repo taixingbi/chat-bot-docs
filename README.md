@@ -121,3 +121,11 @@ A --> C
 * GPU1 local vLLM first 
 * GPU2 local vLLM second (very large queue, e.g over 32, since it is gpu batch)
 * Cloud agent / OpenAI last for timeout, overload(over 64), or hard failure
+
+#### Gateway
+
+authentication (access control)
+
+rate limit (5 requests / second / user, 60 requests / minute / user, Tokens per minute (TPM) 90 000)
+
+request validation
