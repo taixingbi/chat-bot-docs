@@ -144,9 +144,9 @@ request validation
 3. PII detection
 
 #### Cost control
-cost_per_request
-tokens_per_user
-model_usage
+1. cost_per_request
+2. tokens_per_user
+3. model_usage
 Guardrails
 
 Example:
