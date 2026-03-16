@@ -149,7 +149,4 @@ request validation
 3. model_usage
 Guardrails
 
-Example:
-prompt length limit
-rate limiting
-timeout protection
+Example: prompt length limit, rate limiting, timeout protection
