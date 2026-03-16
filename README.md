@@ -69,7 +69,7 @@ C --> C2[token_input]
 C --> C3[token_output]
 C --> C4[cost]
 
-D --> D1[gateway → retriever → LLM]
+D --> D1[retriever → Prompt construction -> LLM call -> Output parser / response]
 
 E --> E1[timeout]
 E --> E2[tool failure]
