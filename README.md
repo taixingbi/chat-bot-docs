@@ -49,7 +49,7 @@ A --> B5[Regression Tests]
 ```
 
 ### SRE
-
+```mermaid
 flowchart LR
 
 A[Telemetry Collection]
@@ -73,3 +73,4 @@ D --> D1[gateway → retriever → LLM]
 
 E --> E1[timeout]
 E --> E2[tool failure]
+```
