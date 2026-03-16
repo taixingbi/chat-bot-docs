@@ -26,10 +26,8 @@ E --> F
 ```mermaid
 flowchart TD
 
-A[Answer Generation]
-
-A --> B[Online Evaluation]
-A --> C[Offline Evaluation]
+B[Online Evaluation]
+C[Offline Evaluation]
 
 B --> B1[Latency]
 B --> B2[Token Usage]
