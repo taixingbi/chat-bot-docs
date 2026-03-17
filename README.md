@@ -90,28 +90,67 @@ I --> M[PagerDuty / Alerts]
 ```mermaid
 flowchart LR
 
-subgraph A[Mac mini - Control Plane]
-A1[Ingress]
-A2[Grafana]
-A3[Prometheus]
+%% =========================
+%% Control Plane
+%% =========================
+subgraph A[Mac mini - Control Plane / Edge Brain]
+A0[K3s Server]
+
+A1[Ingress Controller<br/>Traefik / Nginx]
+A5[API Gateway<br/>FastAPI / Envoy]
+
+A6[Orchestrator<br/>LangGraph / MCP]
+
+A2[Prometheus]
+A3[Grafana]
+A7[Alertmanager]
+
 A4[ArgoCD]
-A5[API Gateway]
+
+A8[Redis / Queue]
 end
 
-subgraph B[GPU Node 1]
-B1[vLLM primary]
-B2[Embedding service]
-B3[GPU batch jobs]
+%% =========================
+%% GPU Node 1 (Primary)
+%% =========================
+subgraph B[GPU Node 1 - Primary]
+B1[vLLM Primary]
+B2[Embedding Service]
+B3[Online RAG Retrieval]
 end
 
-subgraph C[GPU Node 2]
-C1[vLLM secondary]
-C2[RAG ingestion workers]
-C3[Overflow / experiments]
+%% =========================
+%% GPU Node 2 (Secondary)
+%% =========================
+subgraph C[GPU Node 2 - Secondary / Batch]
+C1[vLLM Secondary]
+C2[Ingestion Workers]
+C3[Batch Jobs / Fine-tune / Experiments]
 end
 
-A --> B
-A --> C
+%% =========================
+%% Flow
+%% =========================
+Client --> A1 --> A5 --> A6
+
+A6 -->|LLM request| B1
+A6 -->|fallback| C1
+
+A6 -->|embedding| B2
+
+A6 -->|async jobs| A8
+A8 --> C2
+
+B1 --> A2
+C1 --> A2
+B2 --> A2
+
+A2 --> A3
+A2 --> A7
+
+A4 --> A
+A4 --> B
+A4 --> C
 
 ```
 
